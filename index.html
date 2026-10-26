@@ -41,7 +41,7 @@
 
     <style>
         body { font-family: 'Inter', sans-serif; }
-        
+
         /* Customowy Scrollbar */
         ::-webkit-scrollbar { width: 12px; }
         ::-webkit-scrollbar-track { background: #f8fafc; border-left: 1px solid #e2e8f0; }
@@ -59,16 +59,17 @@
 
     <!-- NAWIGACJA -->
     <header class="fixed w-full top-0 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md z-50 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
-        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between gap-2 sm:gap-4 relative">
+        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between gap-2">
             
-            <a href="#" class="font-bold tracking-tight text-dark dark:text-white flex items-center gap-1.5 sm:gap-2 flex-1 min-w-0 pr-1">
-                <span class="w-8 h-8 flex-shrink-0 bg-brand rounded-lg flex items-center justify-center text-dark shadow-sm">
-                    <span class="material-symbols-rounded text-[20px]">bolt</span>
+            <!-- Logo z płynnym dopasowaniem (responsive-logo) oraz zabezpieczeniem przed wypychaniem -->
+            <a href="#" class="font-bold tracking-tight text-dark dark:text-white flex items-center gap-1.5 sm:gap-2 min-w-0 flex-shrink">
+                <span class="w-7 h-7 sm:w-8 sm:h-8 flex-shrink-0 bg-brand rounded-lg flex items-center justify-center text-dark shadow-sm">
+                    <span class="material-symbols-rounded text-[18px] sm:text-[20px]">bolt</span>
                 </span>
-                <span class="truncate text-[14px] xs:text-[15px] sm:text-xl md:text-2xl">TwojaStrona<span class="text-brand bg-dark dark:bg-slate-800 px-1 rounded mx-0.5">NaJuz</span>.pl</span>
+                <span class="responsive-logo whitespace-nowrap">TwojaStrona<span class="text-brand bg-dark dark:bg-slate-800 px-1 rounded ml-0.5">NaJuz</span>.pl</span>
             </a>
             
-            <div class="flex items-center gap-2 sm:gap-6 flex-shrink-0">
+            <div class="flex items-center gap-2 sm:gap-4 flex-shrink-0">
                 <nav class="hidden md:flex gap-8 font-medium text-slate-700 dark:text-slate-300">
                     <a href="#korzysci" class="hover:text-brand transition">Dlaczego my?</a>
                     <a href="#cennik" class="hover:text-brand transition">Pakiety</a>
@@ -81,7 +82,7 @@
                 </button>
 
                 <!-- Przycisk menu mobilnego (Hamburger) -->
-                <button id="mobile-menu-btn" class="md:hidden w-9 h-9 sm:w-10 sm:h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition focus:outline-none" aria-label="Menu mobilne">
+                <button id="mobile-menu-btn" class="md:hidden w-9 h-9 flex-shrink-0 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition focus:outline-none" aria-label="Menu mobilne">
                     <span id="mobile-menu-icon" class="material-symbols-rounded text-[20px]">menu</span>
                 </button>
 
@@ -91,7 +92,7 @@
             </div>
         </div>
 
-        <!-- ROZWIJANE MENU MOBILNE (Schowane domyślnie) -->
+        <!-- ROZWIJANE MENU MOBILNE -->
         <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-xl transition-all duration-300">
             <nav class="flex flex-col p-4 space-y-2">
                 <a href="#korzysci" class="mobile-link block px-4 py-3 rounded-xl text-slate-700 dark:text-slate-300 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition">Dlaczego my?</a>
@@ -343,9 +344,9 @@
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
             if(mobileMenu.classList.contains('hidden')) {
-                mobileMenuIcon.textContent = 'menu'; // Ikonka hamburgera
+                mobileMenuIcon.textContent = 'menu';
             } else {
-                mobileMenuIcon.textContent = 'close'; // Ikonka X (zamknij)
+                mobileMenuIcon.textContent = 'close';
             }
         });
 
