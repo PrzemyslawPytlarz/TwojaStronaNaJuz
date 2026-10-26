@@ -7,21 +7,18 @@
     
     <title>Twoja Strona Na Już - Profesjonalne WWW w abonamencie</title>
     
-    <!-- Favicon (Ikona Bolt z Material Symbols przekonwertowana na SVG) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960' fill='%231e293b'><path d='M400-80 440-440H240L600-880L560-520H760L400-80Z'/></svg>">
     
-    <!-- Google Fonts: Inter -->
-    <!-- Poprawiony preconnect z dodanym crossorigin (Fix dla błędu z Lighthouse) -->
+    <!-- Google Fonts z preconnect dla poprawy szybkości -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=swap" rel="stylesheet" />
     
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Konfiguracja Tailwind z obsługą trybu ciemnego (class) -->
     <script>
         tailwind.config = {
             darkMode: 'class', 
@@ -35,7 +32,6 @@
                         dark: '#1e293b',
                     },
                     fontFamily: {
-                        // Dodanie systemowych fontów zmniejsza błąd CLS (Przesunięcie układu w Lighthouse)
                         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
                     }
                 }
@@ -47,61 +43,46 @@
         body { font-family: 'Inter', sans-serif; }
         
         /* Customowy Scrollbar */
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f8fafc;
-            border-left: 1px solid #e2e8f0;
-        }
-        .dark ::-webkit-scrollbar-track {
-            background: #0f172a;
-            border-left: 1px solid #1e293b;
-        }
-        ::-webkit-scrollbar-thumb {
-            background-color: #cbd5e1;
-            border-radius: 10px;
-            border: 3px solid #f8fafc;
-        }
-        .dark ::-webkit-scrollbar-thumb {
-            background-color: #334155;
-            border: 3px solid #0f172a;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background-color: #ffd77b;
-        }
+        ::-webkit-scrollbar { width: 12px; }
+        ::-webkit-scrollbar-track { background: #f8fafc; border-left: 1px solid #e2e8f0; }
+        .dark ::-webkit-scrollbar-track { background: #0f172a; border-left: 1px solid #1e293b; }
+        ::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 10px; border: 3px solid #f8fafc; }
+        .dark ::-webkit-scrollbar-thumb { background-color: #334155; border: 3px solid #0f172a; }
+        ::-webkit-scrollbar-thumb:hover { background-color: #ffd77b; }
         
-        /* Wyrównanie ikon Material */
-        .material-symbols-rounded {
-            vertical-align: middle;
-        }
+        .material-symbols-rounded { vertical-align: middle; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 antialiased selection:bg-brand selection:text-slate-900 transition-colors duration-300">
+<body class="overflow-x-hidden bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 antialiased selection:bg-brand selection:text-slate-900 transition-colors duration-300">
 
-    <!-- Pasek postępu scrollowania -->
     <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-brand z-[60] w-0 shadow-[0_0_10px_#ffd77b]"></div>
 
     <!-- NAWIGACJA -->
     <header class="fixed w-full top-0 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md z-50 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
-        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
-            <a href="#" class="text-2xl font-bold tracking-tight text-dark dark:text-white flex items-center gap-2">
-                <span class="w-8 h-8 bg-brand rounded-lg flex items-center justify-center text-dark shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between gap-2 sm:gap-4 relative">
+            
+            <a href="#" class="font-bold tracking-tight text-dark dark:text-white flex items-center gap-1.5 sm:gap-2 flex-1 min-w-0 pr-1">
+                <span class="w-8 h-8 flex-shrink-0 bg-brand rounded-lg flex items-center justify-center text-dark shadow-sm">
                     <span class="material-symbols-rounded text-[20px]">bolt</span>
                 </span>
-                TwojaStrona<span class="text-brand bg-dark dark:bg-slate-800 px-1.5 rounded">NaJuz</span>.pl
+                <span class="truncate text-[14px] xs:text-[15px] sm:text-xl md:text-2xl">TwojaStrona<span class="text-brand bg-dark dark:bg-slate-800 px-1 rounded mx-0.5">NaJuz</span>.pl</span>
             </a>
             
-            <div class="flex items-center gap-4 sm:gap-6">
+            <div class="flex items-center gap-2 sm:gap-6 flex-shrink-0">
                 <nav class="hidden md:flex gap-8 font-medium text-slate-700 dark:text-slate-300">
                     <a href="#korzysci" class="hover:text-brand transition">Dlaczego my?</a>
                     <a href="#cennik" class="hover:text-brand transition">Pakiety</a>
                     <a href="#faq" class="hover:text-brand transition">FAQ</a>
                 </nav>
                 
-                <!-- Okrągły przycisk zmiany motywu (w-10 h-10 wymusza idealne kółko) -->
-                <button id="theme-toggle" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition focus:outline-none" aria-label="Zmień motyw">
-                    <span id="theme-icon" class="material-symbols-rounded text-xl">dark_mode</span>
+                <!-- Przycisk motywu -->
+                <button id="theme-toggle" class="w-9 h-9 sm:w-10 sm:h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition focus:outline-none" aria-label="Zmień motyw">
+                    <span id="theme-icon" class="material-symbols-rounded text-[18px] sm:text-xl">dark_mode</span>
+                </button>
+
+                <!-- Przycisk menu mobilnego (Hamburger) -->
+                <button id="mobile-menu-btn" class="md:hidden w-9 h-9 sm:w-10 sm:h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition focus:outline-none" aria-label="Menu mobilne">
+                    <span id="mobile-menu-icon" class="material-symbols-rounded text-[20px]">menu</span>
                 </button>
 
                 <a href="#kontakt" class="hidden md:inline-flex items-center justify-center bg-dark dark:bg-white text-white dark:text-dark px-6 py-2.5 rounded-full font-semibold hover:bg-slate-800 dark:hover:bg-slate-200 transition">
@@ -109,18 +90,28 @@
                 </a>
             </div>
         </div>
+
+        <!-- ROZWIJANE MENU MOBILNE (Schowane domyślnie) -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-xl transition-all duration-300">
+            <nav class="flex flex-col p-4 space-y-2">
+                <a href="#korzysci" class="mobile-link block px-4 py-3 rounded-xl text-slate-700 dark:text-slate-300 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition">Dlaczego my?</a>
+                <a href="#cennik" class="mobile-link block px-4 py-3 rounded-xl text-slate-700 dark:text-slate-300 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition">Pakiety</a>
+                <a href="#faq" class="mobile-link block px-4 py-3 rounded-xl text-slate-700 dark:text-slate-300 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition">FAQ</a>
+                <div class="h-px w-full bg-slate-200 dark:bg-slate-800 my-2"></div>
+                <a href="#kontakt" class="mobile-link block text-center bg-brand text-slate-900 px-4 py-3 rounded-xl font-bold hover:bg-brand-hover transition">Darmowa wycena</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="pt-20">
-        <!-- HERO SECTION -->
-        <section class="max-w-6xl mx-auto px-4 py-20 md:py-32 flex flex-col md:flex-row items-center gap-12">
-            <div class="md:w-1/2 space-y-8 text-center md:text-left">
-                <div class="inline-flex bg-brand/20 dark:bg-brand/10 text-slate-800 dark:text-brand font-semibold px-4 py-1.5 rounded-full text-sm items-center justify-center md:justify-start gap-2 w-max mx-auto md:mx-0">
+    <main class="pt-20 overflow-hidden md:overflow-visible">
+        <!-- HERO -->
+        <section class="max-w-6xl mx-auto px-4 py-20 md:py-32 flex flex-col md:flex-row items-center gap-12 relative">
+            <div class="md:w-1/2 space-y-8 text-center md:text-left relative z-10">
+                <div class="inline-flex bg-brand/20 dark:bg-brand/10 text-slate-800 dark:text-brand font-semibold px-4 py-1.5 rounded-full text-sm items-center justify-center md:justify-start gap-2 mx-auto md:mx-0 w-fit max-w-full">
                     Ty prowadzisz biznes, my ogarniamy internet.
                 </div>
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-dark dark:text-white">
                     Twoja strona na już. <br class="hidden lg:block"/>
-                    <!-- Zmiana tutaj: 75% sprawia, że podkreślenie jest cieńsze -->
                     <span class="inline box-decoration-clone" style="background: linear-gradient(transparent 75%, #ffd77b 75%);">
                         Bez tysięcy na start.
                     </span>
@@ -154,13 +145,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="absolute inset-0 bg-brand rounded-full blur-3xl opacity-20 dark:opacity-10 -z-10 transform translate-x-10 translate-y-10"></div>
+                <div class="absolute inset-0 bg-brand rounded-full blur-3xl opacity-20 dark:opacity-10 z-0 transform translate-x-10 translate-y-10"></div>
             </div>
         </section>
 
-        <!-- CECHY / KORZYŚCI -->
-        <section id="korzysci" class="bg-white dark:bg-slate-900 py-20 transition-colors duration-300">
-            <div class="max-w-6xl mx-auto px-4">
+        <!-- KORZYŚCI -->
+        <section id="korzysci" class="bg-white dark:bg-slate-900 py-20 transition-colors duration-300 relative">
+            <div class="max-w-6xl mx-auto px-4 relative z-10">
                 <div class="text-center max-w-2xl mx-auto mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold text-dark dark:text-white mb-4">Zamiast problemów, dostajesz gotowe rozwiązanie</h2>
                     <p class="text-slate-700 dark:text-slate-400 text-lg">Zapomnij o samodzielnym odnawianiu domen, ukrytych kosztach czy dopłatach za drogie certyfikaty.</p>
@@ -196,7 +187,7 @@
 
         <!-- CENNIK -->
         <section id="cennik" class="py-20 bg-slate-900 dark:bg-slate-950 text-white relative overflow-hidden transition-colors duration-300">
-            <div class="absolute top-0 right-0 w-96 h-96 bg-brand rounded-full blur-3xl opacity-10 -translate-y-1/2 translate-x-1/3"></div>
+            <div class="absolute top-0 right-0 w-96 h-96 bg-brand rounded-full blur-3xl opacity-10 -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
             
             <div class="max-w-6xl mx-auto px-4 relative z-10">
                 <div class="text-center max-w-2xl mx-auto mb-16">
@@ -204,12 +195,12 @@
                     <p class="text-slate-400 text-lg">Zacznij działać w sieci bez zamrażania gotówki. Możesz zrezygnować w dowolnej chwili.</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch pt-6">
                     
                     <!-- KARTA 1: Wizytówka -->
-                    <div class="bg-slate-800 dark:bg-slate-900 rounded-3xl p-8 border border-slate-700">
+                    <div class="bg-slate-800 dark:bg-slate-900 rounded-3xl p-8 border border-slate-700 flex flex-col h-full mt-4 md:mt-0 relative z-10">
                         <h3 class="text-2xl font-bold mb-2">Wizytówka One-Page</h3>
-                        <p class="text-slate-400 mb-6">Idealna na start dla usług (np. mechanik, fryzjer).</p>
+                        <p class="text-slate-400 mb-6 min-h-[48px]">Idealna na start dla usług (np. mechanik, fryzjer).</p>
                         <div class="mb-6">
                             <span class="text-4xl font-extrabold text-brand">200 zł</span>
                             <span class="text-slate-400"> na start</span>
@@ -218,25 +209,28 @@
                             <span class="text-2xl font-bold">+ 50 zł</span>
                             <span class="text-slate-400"> miesięcznie (lub 600 zł/rok)</span>
                         </div>
-                        <ul class="space-y-4 mb-8 text-slate-300">
-                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> 1 długa, przewijana strona</li>
-                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Własna domena i hosting w cenie</li>
-                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> 1 paczka poprawek w miesiącu</li>
-                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Szybkie ładowanie i darmowy SSL</li>
-                            <li class="flex gap-3 items-start text-slate-500"><span class="material-symbols-rounded text-slate-500 text-[20px] mt-0.5">done</span> Opcjonalne statystyki (Google Analytics)</li>
+                        <ul class="space-y-4 mb-8 text-slate-300 flex-grow">
+                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Projekt 1 długiej, przewijanej strony WWW</li>
+                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Własna domena internetowa w cenie</li>
+                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Niezawodny i szybki hosting strony w cenie</li>
+                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Darmowy certyfikat bezpieczeństwa SSL (kłódka)</li>
+                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> 1 darmowa paczka poprawek technicznych w miesiącu</li>
+                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Podstawowe zgłoszenie strony do Google Search Console</li>
+                            <li class="flex gap-3 items-start text-slate-400"><span class="material-symbols-rounded text-slate-400 text-[20px] mt-0.5">insights</span> Opcjonalne wdrożenie statystyk Google Analytics</li>
                         </ul>
-                        <a href="#kontakt" class="block w-full text-center bg-slate-700 dark:bg-slate-800 text-white py-4 rounded-xl font-bold hover:bg-slate-600 dark:hover:bg-slate-700 transition">
+                        <a href="#kontakt" class="block w-full text-center bg-slate-700 dark:bg-slate-800 text-white py-4 rounded-xl font-bold hover:bg-slate-600 dark:hover:bg-slate-700 transition mt-auto">
                             Wybieram ten pakiet
                         </a>
                     </div>
 
                     <!-- KARTA 2: Rozbudowany -->
-                    <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 border-4 border-brand transform md:-translate-y-4 shadow-2xl shadow-brand/20 text-slate-800 dark:text-slate-100">
-                        <div class="bg-brand text-slate-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-4">
-                            Dla szerszej oferty
+                    <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 border-4 border-brand shadow-[0_0_25px_rgba(255,215,123,0.3)] dark:shadow-[0_0_25px_rgba(255,215,123,0.15)] text-slate-800 dark:text-slate-100 flex flex-col h-full relative z-10">
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand text-slate-900 px-4 py-1 rounded-full font-bold text-sm tracking-wider shadow-md whitespace-nowrap">
+                            POLECANY PAKIET
                         </div>
-                        <h3 class="text-2xl font-bold text-dark dark:text-white mb-2">Strona Rozbudowana</h3>
-                        <p class="text-slate-600 dark:text-slate-400 mb-6">Dla firm, które chcą szczegółowo opisać swoje usługi.</p>
+                        
+                        <h3 class="text-2xl font-bold text-dark dark:text-white mb-2 mt-2">Strona Rozbudowana</h3>
+                        <p class="text-slate-600 dark:text-slate-400 mb-6 min-h-[48px]">Dla firm, które chcą szczegółowo opisać swoje usługi.</p>
                         <div class="mb-6">
                             <span class="text-4xl font-extrabold text-dark dark:text-white">500 zł</span>
                             <span class="text-slate-600 dark:text-slate-400"> na start</span>
@@ -245,14 +239,16 @@
                             <span class="text-2xl font-bold text-dark dark:text-white">+ 70 zł</span>
                             <span class="text-slate-600 dark:text-slate-400"> miesięcznie (lub 840 zł/rok)</span>
                         </div>
-                        <ul class="space-y-4 mb-8 text-slate-700 dark:text-slate-300 font-medium">
-                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Do 5 osobnych podstron (Oferta, Kontakt itp.)</li>
-                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Własna domena i hosting w cenie</li>
-                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> 1 paczka poprawek w miesiącu</li>
-                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Zgłoszenie do Google Search Console</li>
-                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Opcjonalne raporty Google Analytics</li>
+                        <ul class="space-y-4 mb-8 text-slate-700 dark:text-slate-300 font-medium flex-grow">
+                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Projekt do 5 osobnych podstron (np. O nas, Oferta, Kontakt)</li>
+                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Własna domena internetowa w cenie</li>
+                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Niezawodny i szybki hosting strony w cenie</li>
+                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Darmowy certyfikat bezpieczeństwa SSL (kłódka)</li>
+                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> 1 darmowa paczka poprawek technicznych w miesiącu</li>
+                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Podstawowe zgłoszenie strony do Google Search Console</li>
+                            <li class="flex gap-3 items-start text-slate-500 dark:text-slate-400"><span class="material-symbols-rounded text-slate-500 dark:text-slate-400 text-[20px] mt-0.5">insights</span> Opcjonalne wdrożenie statystyk Google Analytics</li>
                         </ul>
-                        <a href="#kontakt" class="block w-full text-center bg-brand text-slate-900 py-4 rounded-xl font-bold hover:bg-brand-hover transition">
+                        <a href="#kontakt" class="block w-full text-center bg-brand text-slate-900 py-4 rounded-xl font-bold hover:bg-brand-hover transition mt-auto">
                             Wybieram ten pakiet
                         </a>
                     </div>
@@ -262,7 +258,7 @@
         </section>
 
         <!-- FAQ -->
-        <section id="faq" class="py-20 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+        <section id="faq" class="py-20 bg-slate-50 dark:bg-slate-900 transition-colors duration-300 relative z-10">
             <div class="max-w-3xl mx-auto px-4">
                 <h2 class="text-3xl font-bold text-dark dark:text-white mb-10 text-center">Najczęściej zadawane pytania</h2>
                 <div class="space-y-6">
@@ -282,7 +278,7 @@
             </div>
         </section>
 
-        <!-- KONTAKT CTA -->
+        <!-- KONTAKT -->
         <section id="kontakt" class="py-20 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 transition-colors duration-300">
             <div class="max-w-4xl mx-auto px-4 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold text-dark dark:text-white mb-6">Zdobądź wizytówkę WWW w kilka dni.</h2>
@@ -336,6 +332,29 @@
                 localStorage.theme = 'light';
                 themeIcon.textContent = 'dark_mode'; 
             }
+        });
+
+        // Obsługa rozwijanego MENU MOBILNEGO
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if(mobileMenu.classList.contains('hidden')) {
+                mobileMenuIcon.textContent = 'menu'; // Ikonka hamburgera
+            } else {
+                mobileMenuIcon.textContent = 'close'; // Ikonka X (zamknij)
+            }
+        });
+
+        // Automatyczne zamykanie menu mobilnego po kliknięciu w link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuIcon.textContent = 'menu';
+            });
         });
     </script>
 </body>
