@@ -96,43 +96,43 @@
         }
     </style>
 </head>
-<body class="overflow-x-hidden bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 antialiased selection:bg-brand selection:text-slate-900 transition-colors duration-300">
+<body class="overflow-x-hidden bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 antialiased selection:bg-brand selection:text-slate-900 transition-colors duration-200">
 
     <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-brand z-[60] w-0 shadow-[0_0_10px_#ffd77b] transition-all duration-150"></div>
 
     <!-- NAWIGACJA -->
-    <header class="fixed w-full top-0 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md z-50 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+    <header class="fixed w-full top-0 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md z-50 border-b border-slate-200 dark:border-slate-800 transition-colors duration-200">
         <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between gap-2">
             
             <a href="#" class="font-bold tracking-tight text-dark dark:text-white flex items-center gap-1.5 sm:gap-2 min-w-0 flex-shrink hover:scale-105 transition-transform duration-300 origin-left">
                 <span class="w-7 h-7 sm:w-8 sm:h-8 flex-shrink-0 bg-brand rounded-lg flex items-center justify-center text-dark shadow-sm overflow-hidden p-1">
                     <img src="/logo.svg" alt="Logo" class="w-full h-full object-contain">
                 </span>
-                <span class="text-[15px] xs:text-base sm:text-xl md:text-2xl whitespace-nowrap">TwojaStrona<span class="text-brand bg-dark dark:bg-slate-800 px-1 sm:px-1.5 rounded mx-0.5 transition-colors">NaJuz</span>.pl</span>
+                <span class="text-[15px] xs:text-base sm:text-xl md:text-2xl whitespace-nowrap">TwojaStrona<span class="text-brand bg-dark dark:bg-slate-800 px-1 sm:px-1.5 rounded mx-0.5 transition-colors duration-200">NaJuz</span>.pl</span>
             </a>
             
             <div class="flex items-center gap-2 sm:gap-4 flex-shrink-0">
                 <nav class="hidden md:flex gap-8 font-medium text-slate-700 dark:text-slate-300">
-                    <a href="#korzysci" class="relative group hover:text-dark dark:hover:text-white transition-colors">
+                    <a href="#korzysci" class="relative group hover:text-dark dark:hover:text-white transition-colors duration-200">
                         Dlaczego my?
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="#cennik" class="relative group hover:text-dark dark:hover:text-white transition-colors">
+                    <a href="#cennik" class="relative group hover:text-dark dark:hover:text-white transition-colors duration-200">
                         Pakiety
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="#faq" class="relative group hover:text-dark dark:hover:text-white transition-colors">
+                    <a href="#faq" class="relative group hover:text-dark dark:hover:text-white transition-colors duration-200">
                         FAQ
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand transition-all duration-300 group-hover:w-full"></span>
                     </a>
                 </nav>
                 
                 <!-- Przycisk Zmiany Motywu -->
-                <button id="theme-toggle" class="w-9 h-9 sm:w-10 sm:h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors focus:outline-none active:scale-90" aria-label="Zmień motyw">
-                    <span id="theme-icon" class="material-symbols-rounded text-[18px] sm:text-xl transition-transform duration-300">dark_mode</span>
+                <button id="theme-toggle" class="w-9 h-9 sm:w-10 sm:h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors duration-200 focus:outline-none active:scale-90" aria-label="Zmień motyw">
+                    <span id="theme-icon" class="material-symbols-rounded text-[18px] sm:text-xl transition-all duration-200">dark_mode</span>
                 </button>
 
-                <button id="mobile-menu-btn" class="md:hidden w-9 h-9 flex-shrink-0 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors focus:outline-none active:scale-90" aria-label="Menu mobilne">
+                <button id="mobile-menu-btn" class="md:hidden w-9 h-9 flex-shrink-0 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors duration-200 focus:outline-none active:scale-90" aria-label="Menu mobilne">
                     <span id="mobile-menu-icon" class="material-symbols-rounded text-[20px] transition-transform duration-300">menu</span>
                 </button>
 
@@ -145,10 +145,10 @@
         <!-- ROZWIJANE MENU MOBILNE -->
         <div id="mobile-menu" class="md:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-xl pointer-events-none opacity-0 -translate-y-4 transition-all duration-300">
             <nav class="flex flex-col p-4 space-y-2">
-                <a href="#korzysci" class="mobile-link block px-4 py-3 rounded-xl text-slate-700 dark:text-slate-300 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Dlaczego my?</a>
-                <a href="#cennik" class="mobile-link block px-4 py-3 rounded-xl text-slate-700 dark:text-slate-300 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Pakiety</a>
-                <a href="#faq" class="mobile-link block px-4 py-3 rounded-xl text-slate-700 dark:text-slate-300 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">FAQ</a>
-                <div class="h-px w-full bg-slate-200 dark:bg-slate-800 my-2"></div>
+                <a href="#korzysci" class="mobile-link block px-4 py-3 rounded-xl text-slate-700 dark:text-slate-300 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200">Dlaczego my?</a>
+                <a href="#cennik" class="mobile-link block px-4 py-3 rounded-xl text-slate-700 dark:text-slate-300 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200">Pakiety</a>
+                <a href="#faq" class="mobile-link block px-4 py-3 rounded-xl text-slate-700 dark:text-slate-300 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200">FAQ</a>
+                <div class="h-px w-full bg-slate-200 dark:bg-slate-800 my-2 transition-colors duration-200"></div>
                 <a href="#kontakt" class="mobile-link block text-center bg-brand text-slate-900 px-4 py-3 rounded-xl font-bold hover:bg-brand-hover active:scale-95 transition-all">Darmowa wycena</a>
             </nav>
         </div>
@@ -158,23 +158,23 @@
         <!-- HERO -->
         <section class="max-w-6xl mx-auto px-4 py-20 md:py-32 flex flex-col md:flex-row items-center gap-12 relative">
             <div class="md:w-1/2 space-y-8 text-center md:text-left relative z-10">
-                <div class="fade-in-up delay-100 inline-flex bg-brand/20 dark:bg-brand/10 text-slate-800 dark:text-brand font-semibold px-4 py-1.5 rounded-full text-sm items-center justify-center md:justify-start gap-2 mx-auto md:mx-0 w-fit max-w-full">
+                <div class="fade-in-up delay-100 inline-flex bg-brand/20 dark:bg-brand/10 text-slate-800 dark:text-brand font-semibold px-4 py-1.5 rounded-full text-sm items-center justify-center md:justify-start gap-2 mx-auto md:mx-0 w-fit max-w-full transition-colors duration-200">
                     Ty prowadzisz biznes, my ogarniamy internet.
                 </div>
-                <h1 class="fade-in-up delay-200 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-dark dark:text-white">
+                <h1 class="fade-in-up delay-200 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-dark dark:text-white transition-colors duration-200">
                     Twoja strona na już. <br class="hidden lg:block"/>
                     <span class="inline box-decoration-clone" style="background: linear-gradient(transparent 75%, #ffd77b 75%);">
                         Bez tysięcy na start.
                     </span>
                 </h1>
-                <p class="fade-in-up delay-300 text-lg md:text-xl text-slate-700 dark:text-slate-300 leading-relaxed max-w-lg mx-auto md:mx-0">
+                <p class="fade-in-up delay-300 text-lg md:text-xl text-slate-700 dark:text-slate-300 leading-relaxed max-w-lg mx-auto md:mx-0 transition-colors duration-200">
                     Strona, domena, szybki serwer i comiesięczna opieka techniczna w jednym, najtańszym abonamencie. Skup się na klientach, a formalności zostaw nam.
                 </p>
                 <div class="fade-in-up delay-400 flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
                     <a href="#cennik" class="w-full sm:w-auto bg-brand text-slate-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-hover hover:scale-105 active:scale-95 transition-all shadow-lg shadow-brand/30">
                         Zobacz pakiety
                     </a>
-                    <a href="#korzysci" class="w-full sm:w-auto bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 px-8 py-4 rounded-full font-bold text-lg hover:border-slate-300 dark:hover:border-slate-600 hover:scale-105 active:scale-95 transition-all">
+                    <a href="#korzysci" class="w-full sm:w-auto bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 px-8 py-4 rounded-full font-bold text-lg hover:border-slate-300 dark:hover:border-slate-600 hover:scale-105 active:scale-95 transition-all duration-200">
                         Jak to działa?
                     </a>
                 </div>
@@ -182,93 +182,93 @@
             
             <div class="md:w-1/2 relative w-full max-w-md mx-auto fade-in-up delay-300">
                 <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 relative z-10 transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl cursor-default">
-                    <div class="flex gap-2 mb-4 border-b border-slate-100 dark:border-slate-700 pb-4">
+                    <div class="flex gap-2 mb-4 border-b border-slate-100 dark:border-slate-700 pb-4 transition-colors duration-200">
                         <div class="w-3 h-3 rounded-full bg-red-400"></div>
                         <div class="w-3 h-3 rounded-full bg-amber-400"></div>
                         <div class="w-3 h-3 rounded-full bg-green-400"></div>
                     </div>
                     <div class="space-y-4">
-                        <div class="h-8 bg-slate-100 dark:bg-slate-700 rounded w-1/3"></div>
-                        <div class="h-32 bg-slate-100 dark:bg-slate-700 rounded w-full"></div>
+                        <div class="h-8 bg-slate-100 dark:bg-slate-700 rounded w-1/3 transition-colors duration-200"></div>
+                        <div class="h-32 bg-slate-100 dark:bg-slate-700 rounded w-full transition-colors duration-200"></div>
                         <div class="grid grid-cols-2 gap-4">
-                            <div class="h-20 bg-brand/30 dark:bg-brand/20 rounded"></div>
-                            <div class="h-20 bg-slate-100 dark:bg-slate-700 rounded"></div>
+                            <div class="h-20 bg-brand/30 dark:bg-brand/20 rounded transition-colors duration-200"></div>
+                            <div class="h-20 bg-slate-100 dark:bg-slate-700 rounded transition-colors duration-200"></div>
                         </div>
                     </div>
                 </div>
-                <div class="absolute inset-0 bg-brand rounded-full blur-3xl opacity-20 dark:opacity-10 z-0 transform translate-x-10 translate-y-10"></div>
+                <div class="absolute inset-0 bg-brand rounded-full blur-3xl opacity-20 dark:opacity-10 z-0 transform translate-x-10 translate-y-10 transition-opacity duration-200"></div>
             </div>
         </section>
 
         <!-- KORZYŚCI -->
-        <section id="korzysci" class="bg-white dark:bg-slate-900 py-20 transition-colors duration-300 relative border-t border-slate-200 dark:border-slate-800">
+        <section id="korzysci" class="bg-white dark:bg-slate-900 py-20 relative border-t border-slate-200 dark:border-slate-800 transition-colors duration-200">
             <div class="max-w-6xl mx-auto px-4 relative z-10">
                 <div class="reveal text-center max-w-2xl mx-auto mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-dark dark:text-white mb-4 transition-colors">Zamiast problemów, dostajesz gotowe rozwiązanie</h2>
-                    <p class="text-slate-700 dark:text-slate-400 text-lg transition-colors">Zapomnij o samodzielnym odnawianiu domen, ukrytych kosztach czy dopłatach za drogie certyfikaty.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark dark:text-white mb-4 transition-colors duration-200">Zamiast problemów, dostajesz gotowe rozwiązanie</h2>
+                    <p class="text-slate-700 dark:text-slate-400 text-lg transition-colors duration-200">Zapomnij o samodzielnym odnawianiu domen, ukrytych kosztach czy dopłatach za drogie certyfikaty.</p>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="reveal group bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                    <div class="reveal group bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-2 hover:shadow-xl transition-all duration-200">
                         <div class="w-14 h-14 bg-brand rounded-xl flex items-center justify-center text-dark mb-6 shadow-sm group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                             <span class="material-symbols-rounded text-3xl">deployed_code</span>
                         </div>
-                        <h3 class="text-xl font-bold text-dark dark:text-white mb-3 transition-colors">Wszystko w cenie</h3>
-                        <p class="text-slate-700 dark:text-slate-300 transition-colors">Jedna niska opłata pokrywa własną domenę, stabilny hosting oraz certyfikat SSL (kłódkę). Ty płacisz, my zajmujemy się całą techniką.</p>
+                        <h3 class="text-xl font-bold text-dark dark:text-white mb-3 transition-colors duration-200">Wszystko w cenie</h3>
+                        <p class="text-slate-700 dark:text-slate-300 transition-colors duration-200">Jedna niska opłata pokrywa własną domenę, stabilny hosting oraz certyfikat SSL (kłódkę). Ty płacisz, my zajmujemy się całą techniką.</p>
                     </div>
                     
-                    <div class="reveal group bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-2 hover:shadow-xl transition-all duration-300" style="--delay: 100ms;">
+                    <div class="reveal group bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-2 hover:shadow-xl transition-all duration-200" style="--delay: 100ms;">
                         <div class="w-14 h-14 bg-brand rounded-xl flex items-center justify-center text-dark mb-6 shadow-sm group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300">
                             <span class="material-symbols-rounded text-3xl">speed</span>
                         </div>
-                        <h3 class="text-xl font-bold text-dark dark:text-white mb-3 transition-colors">Pakiet SEO Start</h3>
-                        <p class="text-slate-700 dark:text-slate-300 transition-colors">Strona zoptymalizowana w formacie WebP dla błyskawicznego ładowania. Automatycznie zgłaszamy ją do Google, by klienci łatwo Cię znaleźli.</p>
+                        <h3 class="text-xl font-bold text-dark dark:text-white mb-3 transition-colors duration-200">Pakiet SEO Start</h3>
+                        <p class="text-slate-700 dark:text-slate-300 transition-colors duration-200">Strona zoptymalizowana w formacie WebP dla błyskawicznego ładowania. Automatycznie zgłaszamy ją do Google, by klienci łatwo Cię znaleźli.</p>
                     </div>
                     
-                    <div class="reveal group bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-2 hover:shadow-xl transition-all duration-300" style="--delay: 200ms;">
+                    <div class="reveal group bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-2 hover:shadow-xl transition-all duration-200" style="--delay: 200ms;">
                         <div class="w-14 h-14 bg-brand rounded-xl flex items-center justify-center text-dark mb-6 shadow-sm group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                             <span class="material-symbols-rounded text-3xl">build_circle</span>
                         </div>
-                        <h3 class="text-xl font-bold text-dark dark:text-white mb-3 transition-colors">Opieka techniczna</h3>
-                        <p class="text-slate-700 dark:text-slate-300 transition-colors">Chcesz zmienić cennik lub dodać zdjęcia z realizacji? Masz do dyspozycji jedną darmową paczkę zmian do wykorzystania w każdym miesiącu.</p>
+                        <h3 class="text-xl font-bold text-dark dark:text-white mb-3 transition-colors duration-200">Opieka techniczna</h3>
+                        <p class="text-slate-700 dark:text-slate-300 transition-colors duration-200">Chcesz zmienić cennik lub dodać zdjęcia z realizacji? Masz do dyspozycji jedną darmową paczkę zmian do wykorzystania w każdym miesiącu.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- CENNIK -->
-        <section id="cennik" class="py-20 bg-slate-900 dark:bg-slate-950 text-white relative overflow-hidden transition-colors duration-300">
-            <div class="absolute top-0 right-0 w-96 h-96 bg-brand rounded-full blur-3xl opacity-10 -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+        <section id="cennik" class="py-20 bg-slate-900 dark:bg-slate-950 text-white relative overflow-hidden transition-colors duration-200">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-brand rounded-full blur-3xl opacity-10 -translate-y-1/2 translate-x-1/3 pointer-events-none transition-opacity duration-200"></div>
             
             <div class="max-w-6xl mx-auto px-4 relative z-10">
                 <div class="reveal text-center max-w-2xl mx-auto mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Proste pakiety, jasne zasady</h2>
-                    <p class="text-slate-300 dark:text-slate-400 text-lg">Zacznij działać w sieci bez zamrażania gotówki. Możesz zrezygnować w dowolnej chwili.</p>
+                    <p class="text-slate-300 dark:text-slate-400 text-lg transition-colors duration-200">Zacznij działać w sieci bez zamrażania gotówki. Możesz zrezygnować w dowolnej chwili.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch pt-6">
                     
                     <!-- KARTA 1: Wizytówka -->
                     <div class="reveal h-full mt-4 md:mt-0">
-                        <div class="bg-slate-800 dark:bg-slate-900 rounded-3xl p-8 border border-slate-700 dark:border-slate-800 text-white flex flex-col h-full relative z-10 hover:border-slate-600 transition-colors duration-300">
+                        <div class="bg-slate-800 dark:bg-slate-900 rounded-3xl p-8 border border-slate-700 dark:border-slate-800 text-white flex flex-col h-full relative z-10 hover:border-slate-600 transition-colors duration-200">
                             <h3 class="text-2xl font-bold mb-2">Wizytówka One-Page</h3>
-                            <p class="text-slate-300 dark:text-slate-400 mb-6 min-h-[48px]">Idealna na start dla usług (np. mechanik, fryzjer).</p>
+                            <p class="text-slate-300 dark:text-slate-400 mb-6 min-h-[48px] transition-colors duration-200">Idealna na start dla usług (np. mechanik, fryzjer).</p>
                             <div class="mb-6">
                                 <span class="text-4xl font-extrabold text-brand">200 zł</span>
-                                <span class="text-slate-300 dark:text-slate-400"> na start</span>
+                                <span class="text-slate-300 dark:text-slate-400 transition-colors duration-200"> na start</span>
                             </div>
-                            <div class="mb-8 pb-8 border-b border-slate-700 dark:border-slate-800 transition-colors">
+                            <div class="mb-8 pb-8 border-b border-slate-700 dark:border-slate-800 transition-colors duration-200">
                                 <span class="text-2xl font-bold">+ 50 zł</span>
-                                <span class="text-slate-300 dark:text-slate-400"> miesięcznie (lub 600 zł/rok)</span>
+                                <span class="text-slate-300 dark:text-slate-400 transition-colors duration-200"> miesięcznie (lub 600 zł/rok)</span>
                             </div>
-                            <ul class="space-y-4 mb-8 text-slate-200 dark:text-slate-300 flex-grow transition-colors">
+                            <ul class="space-y-4 mb-8 text-slate-200 dark:text-slate-300 flex-grow transition-colors duration-200">
                                 <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Projekt 1 długiej, przewijanej strony WWW</li>
                                 <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Własna domena internetowa w cenie</li>
                                 <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Niezawodny i szybki hosting strony w cenie</li>
                                 <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Darmowy certyfikat bezpieczeństwa SSL (kłódka)</li>
                                 <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> 1 darmowa paczka poprawek technicznych w miesiącu</li>
                                 <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Podstawowe zgłoszenie strony do Google Search Console</li>
-                                <li class="flex gap-3 items-start text-slate-400 dark:text-slate-500 transition-colors"><span class="material-symbols-rounded text-[20px] mt-0.5 transition-colors">insights</span> Opcjonalne wdrożenie statystyk Google Analytics w cenie</li>
+                                <li class="flex gap-3 items-start text-slate-400 dark:text-slate-500 transition-colors duration-200"><span class="material-symbols-rounded text-[20px] mt-0.5">insights</span> Opcjonalne wdrożenie statystyk Google Analytics w cenie</li>
                             </ul>
                             <a href="#kontakt" class="block w-full text-center bg-slate-700 dark:bg-slate-800 text-white py-4 rounded-xl font-bold hover:bg-slate-600 dark:hover:bg-slate-700 active:scale-95 transition-all mt-auto shadow-sm">
                                 Wybieram ten pakiet
@@ -278,29 +278,29 @@
 
                     <!-- KARTA 2: Rozbudowany -->
                     <div class="reveal h-full" style="--delay: 150ms;">
-                        <div class="bg-slate-800 dark:bg-slate-900 rounded-3xl p-8 border-4 border-brand animate-glow-pulse dark:animate-dark-glow-pulse text-white flex flex-col h-full relative z-10 transition-colors duration-300">
+                        <div class="bg-slate-800 dark:bg-slate-900 rounded-3xl p-8 border-4 border-brand animate-glow-pulse dark:animate-dark-glow-pulse text-white flex flex-col h-full relative z-10 transition-colors duration-200">
                             <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand text-slate-900 px-4 py-1 rounded-full font-bold text-sm tracking-wider shadow-md whitespace-nowrap">
                                 POLECANY PAKIET
                             </div>
                             
                             <h3 class="text-2xl font-bold text-white mb-2 mt-2">Strona Rozbudowana</h3>
-                            <p class="text-slate-300 dark:text-slate-400 mb-6 min-h-[48px]">Dla firm, które chcą szczegółowo opisać swoje usługi.</p>
+                            <p class="text-slate-300 dark:text-slate-400 mb-6 min-h-[48px] transition-colors duration-200">Dla firm, które chcą szczegółowo opisać swoje usługi.</p>
                             <div class="mb-6">
                                 <span class="text-4xl font-extrabold text-white">500 zł</span>
-                                <span class="text-slate-300 dark:text-slate-400"> na start</span>
+                                <span class="text-slate-300 dark:text-slate-400 transition-colors duration-200"> na start</span>
                             </div>
-                            <div class="mb-8 pb-8 border-b border-slate-700 dark:border-slate-800 transition-colors">
+                            <div class="mb-8 pb-8 border-b border-slate-700 dark:border-slate-800 transition-colors duration-200">
                                 <span class="text-2xl font-bold text-white">+ 50 zł</span>
-                                <span class="text-slate-300 dark:text-slate-400"> miesięcznie (lub 600 zł/rok)</span>
+                                <span class="text-slate-300 dark:text-slate-400 transition-colors duration-200"> miesięcznie (lub 600 zł/rok)</span>
                             </div>
-                            <ul class="space-y-4 mb-8 text-slate-200 dark:text-slate-300 font-medium flex-grow">
+                            <ul class="space-y-4 mb-8 text-slate-200 dark:text-slate-300 font-medium flex-grow transition-colors duration-200">
                                 <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Projekt do 5 osobnych podstron (np. O nas, Oferta, Kontakt)</li>
                                 <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Własna domena internetowa w cenie</li>
                                 <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Niezawodny i szybki hosting strony w cenie</li>
                                 <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Darmowy certyfikat bezpieczeństwa SSL (kłódka)</li>
                                 <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> 1 darmowa paczka poprawek technicznych w miesiącu</li>
                                 <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Podstawowe zgłoszenie strony do Google Search Console</li>
-                                <li class="flex gap-3 items-start text-slate-400 dark:text-slate-500"><span class="material-symbols-rounded text-slate-400 text-[20px] mt-0.5">insights</span> Opcjonalne wdrożenie statystyk Google Analytics w cenie</li>
+                                <li class="flex gap-3 items-start text-slate-400 dark:text-slate-500 transition-colors duration-200"><span class="material-symbols-rounded text-[20px] mt-0.5">insights</span> Opcjonalne wdrożenie statystyk Google Analytics w cenie</li>
                             </ul>
                             <a href="#kontakt" class="block w-full text-center bg-brand text-slate-900 py-4 rounded-xl font-bold hover:bg-brand-hover active:scale-95 transition-all mt-auto shadow-md hover:shadow-lg">
                                 Wybieram ten pakiet
@@ -313,33 +313,33 @@
         </section>
 
         <!-- FAQ -->
-        <section id="faq" class="py-20 bg-slate-50 dark:bg-slate-900 transition-colors duration-300 relative z-10">
+        <section id="faq" class="py-20 bg-slate-50 dark:bg-slate-900 relative z-10 transition-colors duration-200">
             <div class="max-w-3xl mx-auto px-4">
-                <h2 class="reveal text-3xl font-bold text-dark dark:text-white mb-10 text-center transition-colors">Najczęściej zadawane pytania</h2>
+                <h2 class="reveal text-3xl font-bold text-dark dark:text-white mb-10 text-center transition-colors duration-200">Najczęściej zadawane pytania</h2>
                 <div class="space-y-6">
                     
-                    <div class="reveal bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 transition-colors">
-                        <h3 class="font-bold text-lg text-dark dark:text-white mb-3 transition-colors flex items-start gap-3">
+                    <div class="reveal bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 transition-colors duration-200">
+                        <h3 class="font-bold text-lg text-dark dark:text-white mb-3 flex items-start gap-3 transition-colors duration-200">
                             <span class="material-symbols-rounded text-brand">help</span>
                             Co obejmuje 1 darmowa paczka poprawek w miesiącu?
                         </h3>
-                        <p class="text-slate-700 dark:text-slate-300 pl-9 transition-colors">Raz w miesiącu możesz wysłać nam maila z wytycznymi – np. zmianą cen, podmianą zdjęć, czy modyfikacją godzin otwarcia (do 30 min naszej pracy). Wprowadzamy to całkowicie za darmo. Każda dodatkowa interwencja w tym samym miesiącu to jedyne 50 zł.</p>
+                        <p class="text-slate-700 dark:text-slate-300 pl-9 transition-colors duration-200">Raz w miesiącu możesz wysłać nam maila z wytycznymi – np. zmianą cen, podmianą zdjęć, czy modyfikacją godzin otwarcia (do 30 min naszej pracy). Wprowadzamy to całkowicie za darmo. Każda dodatkowa interwencja w tym samym miesiącu to jedyne 50 zł.</p>
                     </div>
                     
-                    <div class="reveal bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 transition-colors" style="--delay: 100ms;">
-                        <h3 class="font-bold text-lg text-dark dark:text-white mb-3 transition-colors flex items-start gap-3">
+                    <div class="reveal bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 transition-colors duration-200" style="--delay: 100ms;">
+                        <h3 class="font-bold text-lg text-dark dark:text-white mb-3 flex items-start gap-3 transition-colors duration-200">
                             <span class="material-symbols-rounded text-brand">help</span>
                             Czy muszę podpisywać umowę na rok?
                         </h3>
-                        <p class="text-slate-700 dark:text-slate-300 pl-9 transition-colors">Nie! Płacisz z miesiąca na miesiąc (lub wybierasz wygodną wpłatę z góry za cały rok). Jeśli biznes Ci nie wyjdzie lub zrezygnujesz, po prostu przestajemy wyświetlać stronę. Zero kar umownych.</p>
+                        <p class="text-slate-700 dark:text-slate-300 pl-9 transition-colors duration-200">Nie! Płacisz z miesiąca na miesiąc (lub wybierasz wygodną wpłatę z góry za cały rok). Jeśli biznes Ci nie wyjdzie lub zrezygnujesz, po prostu przestajemy wyświetlać stronę. Zero kar umownych.</p>
                     </div>
                     
-                    <div class="reveal bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 transition-colors" style="--delay: 200ms;">
-                        <h3 class="font-bold text-lg text-dark dark:text-white mb-3 transition-colors flex items-start gap-3">
+                    <div class="reveal bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 transition-colors duration-200" style="--delay: 200ms;">
+                        <h3 class="font-bold text-lg text-dark dark:text-white mb-3 flex items-start gap-3 transition-colors duration-200">
                             <span class="material-symbols-rounded text-brand">help</span>
                             Do kogo należy domena internetowa?
                         </h3>
-                        <p class="text-slate-700 dark:text-slate-300 pl-9 transition-colors">Aby zdjąć z Ciebie wszelkie problemy konfiguracyjne, domena jest początkowo rejestrowana na TwojaStronaNaJuz.pl (chyba że wolisz zarejestrować ją w pełni samodzielnie na siebie). Zależy nam na pełnej elastyczności – w każdej chwili możesz przenieść domenę i całą stronę do innej firmy, bez żadnych ukrytych opłat. W takiej sytuacji przekazujemy Ci pełny kod HTML strony <strong>całkowicie za darmo</strong>.</p>
+                        <p class="text-slate-700 dark:text-slate-300 pl-9 transition-colors duration-200">Aby zdjąć z Ciebie wszelkie problemy konfiguracyjne, domena jest początkowo rejestrowana na TwojaStronaNaJuz.pl (chyba że wolisz zarejestrować ją w pełni samodzielnie na siebie). Zależy nam na pełnej elastyczności – w każdej chwili możesz przenieść domenę i całą stronę do innej firmy, bez żadnych ukrytych opłat. W takiej sytuacji przekazujemy Ci pełny kod HTML strony <strong>całkowicie za darmo</strong>.</p>
                     </div>
 
                 </div>
@@ -347,10 +347,10 @@
         </section>
 
         <!-- KONTAKT -->
-        <section id="kontakt" class="py-20 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 transition-colors duration-300">
+        <section id="kontakt" class="py-20 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 transition-colors duration-200">
             <div class="reveal max-w-4xl mx-auto px-4 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark dark:text-white mb-6 transition-colors">Zdobądź wizytówkę WWW w kilka dni.</h2>
-                <p class="text-slate-700 dark:text-slate-300 text-lg mb-10 transition-colors">Zadzwoń lub napisz. Przedstawimy Ci wolne domeny i zaczniemy działać na już!</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark dark:text-white mb-6 transition-colors duration-200">Zdobądź wizytówkę WWW w kilka dni.</h2>
+                <p class="text-slate-700 dark:text-slate-300 text-lg mb-10 transition-colors duration-200">Zadzwoń lub napisz. Przedstawimy Ci wolne domeny i zaczniemy działać na już!</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-6">
                     <a href="mailto:kontakt@twojastronanajuz.pl" class="bg-brand text-slate-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-hover hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand/30">
                         <span class="material-symbols-rounded">mail</span> kontakt@twojastronanajuz.pl
@@ -361,7 +361,7 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-slate-900 dark:bg-slate-950 text-slate-400 py-8 text-center border-t border-slate-800 transition-colors duration-300">
+    <footer class="bg-slate-900 dark:bg-slate-950 text-slate-400 py-8 text-center border-t border-slate-800 transition-colors duration-200">
         <div class="max-w-6xl mx-auto px-4">
             <p class="reveal">&copy; 2026 TwojaStronaNaJuz.pl - Wszelkie prawa zastrzeżone.</p>
             <p class="reveal text-sm mt-2" style="--delay: 100ms;">Usługi realizowane na terenie całej Polski.</p>
@@ -377,7 +377,7 @@
             document.getElementById('scroll-progress').style.width = scrolled + '%';
         });
 
-        // Obsługa ZMIANY MOTYWU
+        // Obsługa ZMIANY MOTYWU (Szybka z animacją ikony)
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         const html = document.documentElement;
@@ -391,7 +391,9 @@
         }
 
         themeToggleBtn.addEventListener('click', () => {
-            themeIcon.style.transform = 'rotate(180deg) scale(0)';
+            // Szybki obrót i zniknięcie ikonki
+            themeIcon.style.transform = 'rotate(90deg) scale(0)';
+            
             setTimeout(() => {
                 html.classList.toggle('dark');
                 if (html.classList.contains('dark')) {
@@ -401,8 +403,9 @@
                     localStorage.theme = 'light';
                     themeIcon.textContent = 'dark_mode'; 
                 }
+                // Pojawienie się nowej ikonki
                 themeIcon.style.transform = 'rotate(0deg) scale(1)';
-            }, 150);
+            }, 100); // 100ms daje błyskawiczne, ale płynne przejście
         });
 
         // Obsługa Płynnego MENU MOBILNEGO
