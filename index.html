@@ -181,7 +181,7 @@
             </div>
             
             <div class="md:w-1/2 relative w-full max-w-md mx-auto fade-in-up delay-300">
-                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 relative z-10 transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl cursor-default">
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 relative z-10 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl cursor-default transition-all duration-300">
                     <div class="flex gap-2 mb-4 border-b border-slate-100 dark:border-slate-700 pb-4 transition-colors duration-200">
                         <div class="w-3 h-3 rounded-full bg-red-400"></div>
                         <div class="w-3 h-3 rounded-full bg-amber-400"></div>
@@ -209,7 +209,7 @@
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="reveal group bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-2 hover:shadow-xl transition-all duration-200">
+                    <div class="reveal group bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
                         <div class="w-14 h-14 bg-brand rounded-xl flex items-center justify-center text-dark mb-6 shadow-sm group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                             <span class="material-symbols-rounded text-3xl">deployed_code</span>
                         </div>
@@ -217,7 +217,7 @@
                         <p class="text-slate-700 dark:text-slate-300 transition-colors duration-200">Jedna niska opłata pokrywa własną domenę, stabilny hosting oraz certyfikat SSL (kłódkę). Ty płacisz, my zajmujemy się całą techniką.</p>
                     </div>
                     
-                    <div class="reveal group bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-2 hover:shadow-xl transition-all duration-200" style="--delay: 100ms;">
+                    <div class="reveal group bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-2 hover:shadow-xl transition-all duration-300" style="--delay: 100ms;">
                         <div class="w-14 h-14 bg-brand rounded-xl flex items-center justify-center text-dark mb-6 shadow-sm group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300">
                             <span class="material-symbols-rounded text-3xl">speed</span>
                         </div>
@@ -225,7 +225,7 @@
                         <p class="text-slate-700 dark:text-slate-300 transition-colors duration-200">Strona zoptymalizowana w formacie WebP dla błyskawicznego ładowania. Automatycznie zgłaszamy ją do Google, by klienci łatwo Cię znaleźli.</p>
                     </div>
                     
-                    <div class="reveal group bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-2 hover:shadow-xl transition-all duration-200" style="--delay: 200ms;">
+                    <div class="reveal group bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-2 hover:shadow-xl transition-all duration-300" style="--delay: 200ms;">
                         <div class="w-14 h-14 bg-brand rounded-xl flex items-center justify-center text-dark mb-6 shadow-sm group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                             <span class="material-symbols-rounded text-3xl">build_circle</span>
                         </div>
@@ -248,17 +248,21 @@
 
                 <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch pt-6">
                     
-                    <!-- KARTA 1: Wizytówka -->
+                    <!-- KARTA 1: Wizytówka (POLECANA) -->
                     <div class="reveal h-full mt-4 md:mt-0">
-                        <div class="bg-slate-800 dark:bg-slate-900 rounded-3xl p-8 border border-slate-700 dark:border-slate-800 text-white flex flex-col h-full relative z-10 hover:border-slate-600 transition-colors duration-200">
-                            <h3 class="text-2xl font-bold mb-2">Wizytówka One-Page</h3>
+                        <div class="bg-slate-800 dark:bg-slate-900 rounded-3xl p-8 border-4 border-brand animate-glow-pulse dark:animate-dark-glow-pulse text-white flex flex-col h-full relative z-10 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
+                            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand text-slate-900 px-4 py-1 rounded-full font-bold text-sm tracking-wider shadow-md whitespace-nowrap">
+                                POLECANA OFERTA NA START
+                            </div>
+                            
+                            <h3 class="text-2xl font-bold text-white mb-2 mt-2">Wizytówka One-Page</h3>
                             <p class="text-slate-300 dark:text-slate-400 mb-6 min-h-[48px] transition-colors duration-200">Idealna na start dla usług (np. mechanik, fryzjer).</p>
                             <div class="mb-6">
-                                <span class="text-4xl font-extrabold text-brand">200 zł</span>
+                                <span class="text-4xl font-extrabold text-brand">300 zł</span>
                                 <span class="text-slate-300 dark:text-slate-400 transition-colors duration-200"> na start</span>
                             </div>
                             <div class="mb-8 pb-8 border-b border-slate-700 dark:border-slate-800 transition-colors duration-200">
-                                <span class="text-2xl font-bold">+ 50 zł</span>
+                                <span class="text-2xl font-bold text-white">+ 50 zł</span>
                                 <span class="text-slate-300 dark:text-slate-400 transition-colors duration-200"> miesięcznie (lub 600 zł/rok)</span>
                             </div>
                             <ul class="space-y-4 mb-8 text-slate-200 dark:text-slate-300 flex-grow transition-colors duration-200">
@@ -270,27 +274,24 @@
                                 <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Podstawowe zgłoszenie strony do Google Search Console</li>
                                 <li class="flex gap-3 items-start text-slate-400 dark:text-slate-500 transition-colors duration-200"><span class="material-symbols-rounded text-[20px] mt-0.5">insights</span> Opcjonalne wdrożenie statystyk Google Analytics w cenie</li>
                             </ul>
-                            <a href="#kontakt" class="block w-full text-center bg-slate-700 dark:bg-slate-800 text-white py-4 rounded-xl font-bold hover:bg-slate-600 dark:hover:bg-slate-700 active:scale-95 transition-all mt-auto shadow-sm">
+                            <a href="#kontakt" class="block w-full text-center bg-brand text-slate-900 py-4 rounded-xl font-bold hover:bg-brand-hover active:scale-95 transition-all mt-auto shadow-md hover:shadow-lg">
                                 Wybieram ten pakiet
                             </a>
                         </div>
                     </div>
 
-                    <!-- KARTA 2: Rozbudowany -->
+                    <!-- KARTA 2: Rozbudowana -->
                     <div class="reveal h-full" style="--delay: 150ms;">
-                        <div class="bg-slate-800 dark:bg-slate-900 rounded-3xl p-8 border-4 border-brand animate-glow-pulse dark:animate-dark-glow-pulse text-white flex flex-col h-full relative z-10 transition-colors duration-200">
-                            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand text-slate-900 px-4 py-1 rounded-full font-bold text-sm tracking-wider shadow-md whitespace-nowrap">
-                                POLECANY PAKIET
-                            </div>
+                        <div class="bg-slate-800 dark:bg-slate-900 rounded-3xl p-8 border border-slate-700 dark:border-slate-800 text-white flex flex-col h-full relative z-10 hover:border-slate-600 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
                             
-                            <h3 class="text-2xl font-bold text-white mb-2 mt-2">Strona Rozbudowana</h3>
+                            <h3 class="text-2xl font-bold mb-2">Strona Rozbudowana</h3>
                             <p class="text-slate-300 dark:text-slate-400 mb-6 min-h-[48px] transition-colors duration-200">Dla firm, które chcą szczegółowo opisać swoje usługi.</p>
                             <div class="mb-6">
                                 <span class="text-4xl font-extrabold text-white">500 zł</span>
                                 <span class="text-slate-300 dark:text-slate-400 transition-colors duration-200"> na start</span>
                             </div>
                             <div class="mb-8 pb-8 border-b border-slate-700 dark:border-slate-800 transition-colors duration-200">
-                                <span class="text-2xl font-bold text-white">+ 50 zł</span>
+                                <span class="text-2xl font-bold">+ 50 zł</span>
                                 <span class="text-slate-300 dark:text-slate-400 transition-colors duration-200"> miesięcznie (lub 600 zł/rok)</span>
                             </div>
                             <ul class="space-y-4 mb-8 text-slate-200 dark:text-slate-300 font-medium flex-grow transition-colors duration-200">
@@ -300,9 +301,9 @@
                                 <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Darmowy certyfikat bezpieczeństwa SSL (kłódka)</li>
                                 <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> 1 darmowa paczka poprawek technicznych w miesiącu</li>
                                 <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Podstawowe zgłoszenie strony do Google Search Console</li>
-                                <li class="flex gap-3 items-start text-slate-400 dark:text-slate-500 transition-colors duration-200"><span class="material-symbols-rounded text-[20px] mt-0.5">insights</span> Opcjonalne wdrożenie statystyk Google Analytics w cenie</li>
+                                <li class="flex gap-3 items-start text-slate-400 dark:text-slate-500 transition-colors duration-200"><span class="material-symbols-rounded text-slate-400 text-[20px] mt-0.5">insights</span> Opcjonalne wdrożenie statystyk Google Analytics w cenie</li>
                             </ul>
-                            <a href="#kontakt" class="block w-full text-center bg-brand text-slate-900 py-4 rounded-xl font-bold hover:bg-brand-hover active:scale-95 transition-all mt-auto shadow-md hover:shadow-lg">
+                            <a href="#kontakt" class="block w-full text-center bg-slate-700 dark:bg-slate-800 text-white py-4 rounded-xl font-bold hover:bg-slate-600 dark:hover:bg-slate-700 active:scale-95 transition-all mt-auto shadow-sm">
                                 Wybieram ten pakiet
                             </a>
                         </div>
@@ -318,7 +319,7 @@
                 <h2 class="reveal text-3xl font-bold text-dark dark:text-white mb-10 text-center transition-colors duration-200">Najczęściej zadawane pytania</h2>
                 <div class="space-y-6">
                     
-                    <div class="reveal bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 transition-colors duration-200">
+                    <div class="reveal bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 hover:-translate-y-1 hover:shadow-md transition-all duration-300">
                         <h3 class="font-bold text-lg text-dark dark:text-white mb-3 flex items-start gap-3 transition-colors duration-200">
                             <span class="material-symbols-rounded text-brand">help</span>
                             Co obejmuje 1 darmowa paczka poprawek w miesiącu?
@@ -326,7 +327,7 @@
                         <p class="text-slate-700 dark:text-slate-300 pl-9 transition-colors duration-200">Raz w miesiącu możesz wysłać nam maila z wytycznymi – np. zmianą cen, podmianą zdjęć, czy modyfikacją godzin otwarcia (do 30 min naszej pracy). Wprowadzamy to całkowicie za darmo. Każda dodatkowa interwencja w tym samym miesiącu to jedyne 50 zł.</p>
                     </div>
                     
-                    <div class="reveal bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 transition-colors duration-200" style="--delay: 100ms;">
+                    <div class="reveal bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 hover:-translate-y-1 hover:shadow-md transition-all duration-300" style="--delay: 100ms;">
                         <h3 class="font-bold text-lg text-dark dark:text-white mb-3 flex items-start gap-3 transition-colors duration-200">
                             <span class="material-symbols-rounded text-brand">help</span>
                             Czy muszę podpisywać umowę na rok?
@@ -334,7 +335,7 @@
                         <p class="text-slate-700 dark:text-slate-300 pl-9 transition-colors duration-200">Nie! Płacisz z miesiąca na miesiąc (lub wybierasz wygodną wpłatę z góry za cały rok). Jeśli biznes Ci nie wyjdzie lub zrezygnujesz, po prostu przestajemy wyświetlać stronę. Zero kar umownych.</p>
                     </div>
                     
-                    <div class="reveal bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 transition-colors duration-200" style="--delay: 200ms;">
+                    <div class="reveal bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 hover:-translate-y-1 hover:shadow-md transition-all duration-300" style="--delay: 200ms;">
                         <h3 class="font-bold text-lg text-dark dark:text-white mb-3 flex items-start gap-3 transition-colors duration-200">
                             <span class="material-symbols-rounded text-brand">help</span>
                             Do kogo należy domena internetowa?
@@ -405,7 +406,7 @@
                 }
                 // Pojawienie się nowej ikonki
                 themeIcon.style.transform = 'rotate(0deg) scale(1)';
-            }, 100); // 100ms daje błyskawiczne, ale płynne przejście
+            }, 100); 
         });
 
         // Obsługa Płynnego MENU MOBILNEGO
