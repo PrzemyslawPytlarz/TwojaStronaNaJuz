@@ -84,13 +84,15 @@
         /* Animacje elementów przy przewijaniu strony */
         .reveal {
             opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
         }
         .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+            animation: revealAnim 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: var(--delay, 0ms);
+        }
+        @keyframes revealAnim {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -215,7 +217,7 @@
                         <p class="text-slate-700 dark:text-slate-300 transition-colors">Jedna niska opłata pokrywa własną domenę, stabilny hosting oraz certyfikat SSL (kłódkę). Ty płacisz, my zajmujemy się całą techniką.</p>
                     </div>
                     
-                    <div class="reveal group bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-2 hover:shadow-xl transition-all duration-300" style="transition-delay: 100ms;">
+                    <div class="reveal group bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-2 hover:shadow-xl transition-all duration-300" style="--delay: 100ms;">
                         <div class="w-14 h-14 bg-brand rounded-xl flex items-center justify-center text-dark mb-6 shadow-sm group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300">
                             <span class="material-symbols-rounded text-3xl">speed</span>
                         </div>
@@ -223,7 +225,7 @@
                         <p class="text-slate-700 dark:text-slate-300 transition-colors">Strona zoptymalizowana w formacie WebP dla błyskawicznego ładowania. Automatycznie zgłaszamy ją do Google, by klienci łatwo Cię znaleźli.</p>
                     </div>
                     
-                    <div class="reveal group bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-2 hover:shadow-xl transition-all duration-300" style="transition-delay: 200ms;">
+                    <div class="reveal group bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:-translate-y-2 hover:shadow-xl transition-all duration-300" style="--delay: 200ms;">
                         <div class="w-14 h-14 bg-brand rounded-xl flex items-center justify-center text-dark mb-6 shadow-sm group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                             <span class="material-symbols-rounded text-3xl">build_circle</span>
                         </div>
@@ -247,59 +249,63 @@
                 <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch pt-6">
                     
                     <!-- KARTA 1: Wizytówka -->
-                    <div class="reveal bg-slate-800 dark:bg-slate-900 rounded-3xl p-8 border border-slate-700 dark:border-slate-800 text-white flex flex-col h-full mt-4 md:mt-0 relative z-10 hover:border-slate-600 transition-colors duration-300">
-                        <h3 class="text-2xl font-bold mb-2">Wizytówka One-Page</h3>
-                        <p class="text-slate-300 dark:text-slate-400 mb-6 min-h-[48px]">Idealna na start dla usług (np. mechanik, fryzjer).</p>
-                        <div class="mb-6">
-                            <span class="text-4xl font-extrabold text-brand">200 zł</span>
-                            <span class="text-slate-300 dark:text-slate-400"> na start</span>
+                    <div class="reveal h-full mt-4 md:mt-0">
+                        <div class="bg-slate-800 dark:bg-slate-900 rounded-3xl p-8 border border-slate-700 dark:border-slate-800 text-white flex flex-col h-full relative z-10 hover:border-slate-600 transition-colors duration-300">
+                            <h3 class="text-2xl font-bold mb-2">Wizytówka One-Page</h3>
+                            <p class="text-slate-300 dark:text-slate-400 mb-6 min-h-[48px]">Idealna na start dla usług (np. mechanik, fryzjer).</p>
+                            <div class="mb-6">
+                                <span class="text-4xl font-extrabold text-brand">200 zł</span>
+                                <span class="text-slate-300 dark:text-slate-400"> na start</span>
+                            </div>
+                            <div class="mb-8 pb-8 border-b border-slate-700 dark:border-slate-800 transition-colors">
+                                <span class="text-2xl font-bold">+ 50 zł</span>
+                                <span class="text-slate-300 dark:text-slate-400"> miesięcznie (lub 600 zł/rok)</span>
+                            </div>
+                            <ul class="space-y-4 mb-8 text-slate-200 dark:text-slate-300 flex-grow transition-colors">
+                                <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Projekt 1 długiej, przewijanej strony WWW</li>
+                                <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Własna domena internetowa w cenie</li>
+                                <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Niezawodny i szybki hosting strony w cenie</li>
+                                <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Darmowy certyfikat bezpieczeństwa SSL (kłódka)</li>
+                                <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> 1 darmowa paczka poprawek technicznych w miesiącu</li>
+                                <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Podstawowe zgłoszenie strony do Google Search Console</li>
+                                <li class="flex gap-3 items-start text-slate-400 dark:text-slate-500 transition-colors"><span class="material-symbols-rounded text-[20px] mt-0.5 transition-colors">insights</span> Opcjonalne wdrożenie statystyk Google Analytics w cenie</li>
+                            </ul>
+                            <a href="#kontakt" class="block w-full text-center bg-slate-700 dark:bg-slate-800 text-white py-4 rounded-xl font-bold hover:bg-slate-600 dark:hover:bg-slate-700 active:scale-95 transition-all mt-auto shadow-sm">
+                                Wybieram ten pakiet
+                            </a>
                         </div>
-                        <div class="mb-8 pb-8 border-b border-slate-700 dark:border-slate-800 transition-colors">
-                            <span class="text-2xl font-bold">+ 50 zł</span>
-                            <span class="text-slate-300 dark:text-slate-400"> miesięcznie (lub 600 zł/rok)</span>
-                        </div>
-                        <ul class="space-y-4 mb-8 text-slate-200 dark:text-slate-300 flex-grow transition-colors">
-                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Projekt 1 długiej, przewijanej strony WWW</li>
-                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Własna domena internetowa w cenie</li>
-                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Niezawodny i szybki hosting strony w cenie</li>
-                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Darmowy certyfikat bezpieczeństwa SSL (kłódka)</li>
-                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> 1 darmowa paczka poprawek technicznych w miesiącu</li>
-                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Podstawowe zgłoszenie strony do Google Search Console</li>
-                            <li class="flex gap-3 items-start text-slate-400 dark:text-slate-500 transition-colors"><span class="material-symbols-rounded text-[20px] mt-0.5 transition-colors">insights</span> Opcjonalne wdrożenie statystyk Google Analytics w cenie</li>
-                        </ul>
-                        <a href="#kontakt" class="block w-full text-center bg-slate-700 dark:bg-slate-800 text-white py-4 rounded-xl font-bold hover:bg-slate-600 dark:hover:bg-slate-700 active:scale-95 transition-all mt-auto shadow-sm">
-                            Wybieram ten pakiet
-                        </a>
                     </div>
 
                     <!-- KARTA 2: Rozbudowany -->
-                    <div class="reveal bg-slate-800 dark:bg-slate-900 rounded-3xl p-8 border-4 border-brand animate-glow-pulse dark:animate-dark-glow-pulse text-white flex flex-col h-full relative z-10 transition-colors duration-300" style="transition-delay: 150ms;">
-                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand text-slate-900 px-4 py-1 rounded-full font-bold text-sm tracking-wider shadow-md whitespace-nowrap">
-                            POLECANY PAKIET
+                    <div class="reveal h-full" style="--delay: 150ms;">
+                        <div class="bg-slate-800 dark:bg-slate-900 rounded-3xl p-8 border-4 border-brand animate-glow-pulse dark:animate-dark-glow-pulse text-white flex flex-col h-full relative z-10 transition-colors duration-300">
+                            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand text-slate-900 px-4 py-1 rounded-full font-bold text-sm tracking-wider shadow-md whitespace-nowrap">
+                                POLECANY PAKIET
+                            </div>
+                            
+                            <h3 class="text-2xl font-bold text-white mb-2 mt-2">Strona Rozbudowana</h3>
+                            <p class="text-slate-300 dark:text-slate-400 mb-6 min-h-[48px]">Dla firm, które chcą szczegółowo opisać swoje usługi.</p>
+                            <div class="mb-6">
+                                <span class="text-4xl font-extrabold text-white">500 zł</span>
+                                <span class="text-slate-300 dark:text-slate-400"> na start</span>
+                            </div>
+                            <div class="mb-8 pb-8 border-b border-slate-700 dark:border-slate-800 transition-colors">
+                                <span class="text-2xl font-bold text-white">+ 50 zł</span>
+                                <span class="text-slate-300 dark:text-slate-400"> miesięcznie (lub 600 zł/rok)</span>
+                            </div>
+                            <ul class="space-y-4 mb-8 text-slate-200 dark:text-slate-300 font-medium flex-grow">
+                                <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Projekt do 5 osobnych podstron (np. O nas, Oferta, Kontakt)</li>
+                                <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Własna domena internetowa w cenie</li>
+                                <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Niezawodny i szybki hosting strony w cenie</li>
+                                <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Darmowy certyfikat bezpieczeństwa SSL (kłódka)</li>
+                                <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> 1 darmowa paczka poprawek technicznych w miesiącu</li>
+                                <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Podstawowe zgłoszenie strony do Google Search Console</li>
+                                <li class="flex gap-3 items-start text-slate-400 dark:text-slate-500"><span class="material-symbols-rounded text-slate-400 text-[20px] mt-0.5">insights</span> Opcjonalne wdrożenie statystyk Google Analytics w cenie</li>
+                            </ul>
+                            <a href="#kontakt" class="block w-full text-center bg-brand text-slate-900 py-4 rounded-xl font-bold hover:bg-brand-hover active:scale-95 transition-all mt-auto shadow-md hover:shadow-lg">
+                                Wybieram ten pakiet
+                            </a>
                         </div>
-                        
-                        <h3 class="text-2xl font-bold text-white mb-2 mt-2">Strona Rozbudowana</h3>
-                        <p class="text-slate-300 dark:text-slate-400 mb-6 min-h-[48px]">Dla firm, które chcą szczegółowo opisać swoje usługi.</p>
-                        <div class="mb-6">
-                            <span class="text-4xl font-extrabold text-white">500 zł</span>
-                            <span class="text-slate-300 dark:text-slate-400"> na start</span>
-                        </div>
-                        <div class="mb-8 pb-8 border-b border-slate-700 dark:border-slate-800 transition-colors">
-                            <span class="text-2xl font-bold text-white">+ 50 zł</span>
-                            <span class="text-slate-300 dark:text-slate-400"> miesięcznie (lub 600 zł/rok)</span>
-                        </div>
-                        <ul class="space-y-4 mb-8 text-slate-200 dark:text-slate-300 font-medium flex-grow">
-                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Projekt do 5 osobnych podstron (np. O nas, Oferta, Kontakt)</li>
-                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Własna domena internetowa w cenie</li>
-                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Niezawodny i szybki hosting strony w cenie</li>
-                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Darmowy certyfikat bezpieczeństwa SSL (kłódka)</li>
-                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> 1 darmowa paczka poprawek technicznych w miesiącu</li>
-                            <li class="flex gap-3 items-start"><span class="material-symbols-rounded text-brand text-[20px] mt-0.5">check_circle</span> Podstawowe zgłoszenie strony do Google Search Console</li>
-                            <li class="flex gap-3 items-start text-slate-400 dark:text-slate-500"><span class="material-symbols-rounded text-slate-400 text-[20px] mt-0.5">insights</span> Opcjonalne wdrożenie statystyk Google Analytics w cenie</li>
-                        </ul>
-                        <a href="#kontakt" class="block w-full text-center bg-brand text-slate-900 py-4 rounded-xl font-bold hover:bg-brand-hover active:scale-95 transition-all mt-auto shadow-md hover:shadow-lg">
-                            Wybieram ten pakiet
-                        </a>
                     </div>
 
                 </div>
@@ -320,7 +326,7 @@
                         <p class="text-slate-700 dark:text-slate-300 pl-9 transition-colors">Raz w miesiącu możesz wysłać nam maila z wytycznymi – np. zmianą cen, podmianą zdjęć, czy modyfikacją godzin otwarcia (do 30 min naszej pracy). Wprowadzamy to całkowicie za darmo. Każda dodatkowa interwencja w tym samym miesiącu to jedyne 50 zł.</p>
                     </div>
                     
-                    <div class="reveal bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 transition-colors" style="transition-delay: 100ms;">
+                    <div class="reveal bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 transition-colors" style="--delay: 100ms;">
                         <h3 class="font-bold text-lg text-dark dark:text-white mb-3 transition-colors flex items-start gap-3">
                             <span class="material-symbols-rounded text-brand">help</span>
                             Czy muszę podpisywać umowę na rok?
@@ -328,7 +334,7 @@
                         <p class="text-slate-700 dark:text-slate-300 pl-9 transition-colors">Nie! Płacisz z miesiąca na miesiąc (lub wybierasz wygodną wpłatę z góry za cały rok). Jeśli biznes Ci nie wyjdzie lub zrezygnujesz, po prostu przestajemy wyświetlać stronę. Zero kar umownych.</p>
                     </div>
                     
-                    <div class="reveal bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 transition-colors" style="transition-delay: 200ms;">
+                    <div class="reveal bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 transition-colors" style="--delay: 200ms;">
                         <h3 class="font-bold text-lg text-dark dark:text-white mb-3 transition-colors flex items-start gap-3">
                             <span class="material-symbols-rounded text-brand">help</span>
                             Do kogo należy domena internetowa?
@@ -358,7 +364,7 @@
     <footer class="bg-slate-900 dark:bg-slate-950 text-slate-400 py-8 text-center border-t border-slate-800 transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-4">
             <p class="reveal">&copy; 2026 TwojaStronaNaJuz.pl - Wszelkie prawa zastrzeżone.</p>
-            <p class="reveal text-sm mt-2" style="transition-delay: 100ms;">Usługi realizowane na terenie całej Polski.</p>
+            <p class="reveal text-sm mt-2" style="--delay: 100ms;">Usługi realizowane na terenie całej Polski.</p>
         </div>
     </footer>
 
