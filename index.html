@@ -19,6 +19,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=swap" rel="stylesheet" />
     
+    <!-- Lenis CSS dla płynnego scrollowania -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -59,14 +62,47 @@
     <style>
         body { font-family: 'Inter', sans-serif; }
         
-        /* Customowy Scrollbar */
-        ::-webkit-scrollbar { width: 12px; }
-        ::-webkit-scrollbar-track { background: #f8fafc; border-left: 1px solid #e2e8f0; }
-        .dark ::-webkit-scrollbar-track { background: #0f172a; border-left: 1px solid #1e293b; }
-        ::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 10px; border: 3px solid #f8fafc; }
-        .dark ::-webkit-scrollbar-thumb { background-color: #334155; border: 3px solid #0f172a; }
-        ::-webkit-scrollbar-thumb:hover { background-color: #ffd77b; }
+        /* Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(150, 160, 180, 0.35) transparent;
+        }
+        .dark * {
+            scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+        }
+
+        /* Chrome, Edge, Safari (WebKit) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
         
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(150, 160, 180, 0.35);
+            border-radius: 9999px;
+            border: 2px solid transparent;
+            background-clip: content-box;
+            transition: background-color 0.2s ease;
+        }
+        
+        .dark ::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 2px solid transparent;
+            background-clip: content-box;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(150, 160, 180, 0.6);
+        }
+        
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Dodatkowe wsparcie dla płynności */
         .material-symbols-rounded { vertical-align: middle; }
 
         /* Kaskadowy wjazd na start (dla sekcji Hero) */
@@ -391,6 +427,29 @@
             <p class="reveal text-sm mt-2" style="--delay: 100ms;">Usługi realizowane na terenie całej Polski.</p>
         </div>
     </footer>
+
+    <!-- Skrypt Lenis dla płynnego przewijania z bezwładnością -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script>
+        const lenis = new Lenis({
+            duration: 1.2,     
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false, 
+            touchMultiplier: 2,
+            infinite: false,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+    </script>
 
     <script>
         // Pasek postępu scrollowania
